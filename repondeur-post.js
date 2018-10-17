@@ -14,10 +14,13 @@ var serveur = http.createServer(
 			{
             
                 listeChamps = formulaire.split('&');
-                for(var position in listeChamps)
+                for(var position in listeChamps) // foreach particulier du js 
                 {
                     champs = listeChamps[position];
-                    console.log('champs ' + champs);    
+                    console.log('champs ' + champs);
+                    [champ,valeur] = champs.split('=');
+                    //champ = champValeur[0]; //valeur = champValeur[1];
+                    console.log('Apres split ' + champ + ' = ' + valeur);
                 }
             
 				console.log('POST data: %s', formulaire);
